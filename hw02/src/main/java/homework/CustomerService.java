@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public class CustomerService {
 
-    TreeMap<Customer, String> map = new TreeMap<>(Comparator.comparingLong(o -> o.getScores()));
+    private final TreeMap<Customer, String> map = new TreeMap<>(Comparator.comparingLong(o -> o.getScores()));
 
     public Map.Entry<Customer, String> getSmallest() {
         return entryClone(map.firstEntry());
@@ -22,22 +22,9 @@ public class CustomerService {
     }
 
     private Map.Entry<Customer, String> entryClone(Map.Entry<Customer, String> entry) {
-        if (entry == null) return null;
-        return new Map.Entry<>() {
-            @Override
-            public Customer getKey() {
-                return entry.getKey().clone();
-            }
-
-            @Override
-            public String getValue() {
-                return entry.getValue();
-            }
-
-            @Override
-            public String setValue(String value) {
-                return entry.setValue(value);
-            }
-        };
+        if (entry == null) {
+            return null;
+        }
+        return Map.entry(entry.getKey().clone(), entry.getValue());
     }
 }
