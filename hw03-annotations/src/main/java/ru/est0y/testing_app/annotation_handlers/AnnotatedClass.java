@@ -3,7 +3,6 @@ package ru.est0y.testing_app.annotation_handlers;
 import ru.est0y.testing_app.annotation_handlers.exceptions.CreateInstanceException;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
@@ -23,7 +22,7 @@ public class AnnotatedClass {
     }
 
     public Map<Class<? extends Annotation>, List<Method>>
-    annotationMethods(List<Class<? extends Annotation>> annotations) {
+    annotatedMethods(List<Class<? extends Annotation>> annotations) {
         Map<Class<? extends Annotation>, List<Method>> map = emptyMap(annotations);
         Arrays.stream(annotatedClass.getDeclaredMethods()).forEach(method -> {
             method.setAccessible(true);

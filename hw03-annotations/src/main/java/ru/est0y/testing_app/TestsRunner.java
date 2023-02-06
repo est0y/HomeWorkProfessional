@@ -14,7 +14,7 @@ public class TestsRunner {
 
     public void run(String className) throws ClassNotFoundException {
         AnnotatedClass annotatedClass = new AnnotatedClass(Class.forName(className));
-        Map<Class<? extends Annotation>, List<Method>> map = annotatedClass.annotationMethods(
+        Map<Class<? extends Annotation>, List<Method>> map = annotatedClass.annotatedMethods(
                 List.of(Before.class, Test.class, After.class)
         );
         BeforeMethods beforeMethods = new BeforeMethods(map.get(Before.class), new FailedMethodsStats());
