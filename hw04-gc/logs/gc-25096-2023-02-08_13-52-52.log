@@ -1,0 +1,26 @@
+[2023-02-08T13:52:52.434+0300][0.007s][info][gc] Using G1
+[2023-02-08T13:52:52.434+0300][0.007s][debug][gc] ConcGCThreads: 2 offset 16
+[2023-02-08T13:52:52.434+0300][0.007s][debug][gc] ParallelGCThreads: 8
+[2023-02-08T13:52:52.434+0300][0.007s][debug][gc] Initialize mark stack with 4096 chunks, maximum 524288
+[2023-02-08T13:52:52.616+0300][0.189s][info ][gc] GC(0) Pause Young (Concurrent Start) (G1 Humongous Allocation) 26M->24M(64M) 39.694ms
+[2023-02-08T13:52:52.616+0300][0.189s][info ][gc] GC(1) Concurrent Undo Cycle
+[2023-02-08T13:52:52.623+0300][0.196s][info ][gc] GC(1) Concurrent Undo Cycle 6.877ms
+[2023-02-08T13:52:52.717+0300][0.289s][info ][gc] GC(2) Pause Young (Concurrent Start) (G1 Humongous Allocation) 35M->35M(64M) 81.717ms
+[2023-02-08T13:52:52.718+0300][0.291s][info ][gc] GC(3) Concurrent Mark Cycle
+[2023-02-08T13:52:52.726+0300][0.299s][debug][gc] GC(3) Reclaimed 23 empty regions
+[2023-02-08T13:52:52.726+0300][0.299s][info ][gc] GC(3) Pause Remark 51M->28M(64M) 0.461ms
+[2023-02-08T13:52:52.736+0300][0.309s][info ][gc] GC(3) Pause Cleanup 28M->28M(64M) 0.092ms
+[2023-02-08T13:52:52.737+0300][0.309s][info ][gc] GC(3) Concurrent Mark Cycle 18.446ms
+[2023-02-08T13:52:52.748+0300][0.321s][info ][gc] GC(4) Pause Young (Concurrent Start) (G1 Humongous Allocation) 28M->28M(64M) 1.416ms
+[2023-02-08T13:52:52.748+0300][0.321s][info ][gc] GC(5) Concurrent Mark Cycle
+[2023-02-08T13:52:52.749+0300][0.321s][info ][gc] GC(6) Pause Young (Normal) (G1 Humongous Allocation) 28M->28M(64M) 0.354ms
+[2023-02-08T13:52:52.749+0300][0.321s][debug][gc] GC(7) Clear Next Bitmap 0.095ms
+[2023-02-08T13:52:52.763+0300][0.336s][info ][gc] GC(7) Pause Full (G1 Compaction Pause) 28M->17M(64M) 14.185ms
+[2023-02-08T13:52:52.763+0300][0.336s][info ][gc] GC(5) Concurrent Mark Cycle 14.947ms
+[2023-02-08T13:52:52.789+0300][0.362s][info ][gc] GC(8) Pause Young (Concurrent Start) (G1 Humongous Allocation) 41M->41M(64M) 1.825ms
+[2023-02-08T13:52:52.789+0300][0.362s][info ][gc] GC(9) Concurrent Mark Cycle
+[2023-02-08T13:52:52.790+0300][0.363s][info ][gc] GC(10) Pause Young (Normal) (G1 Humongous Allocation) 41M->41M(64M) 0.602ms
+[2023-02-08T13:52:52.790+0300][0.363s][debug][gc] GC(11) Clear Next Bitmap 0.163ms
+[2023-02-08T13:52:52.810+0300][0.383s][info ][gc] GC(11) Pause Full (G1 Compaction Pause) 41M->25M(64M) 19.652ms
+[2023-02-08T13:52:52.831+0300][0.404s][info ][gc] GC(12) Pause Full (G1 Compaction Pause) 25M->25M(64M) 21.093ms
+[2023-02-08T13:52:52.831+0300][0.404s][info ][gc] GC(9) Concurrent Mark Cycle 42.114ms

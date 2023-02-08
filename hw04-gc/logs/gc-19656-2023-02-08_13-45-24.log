@@ -1,0 +1,22 @@
+[2023-02-08T13:45:24.107+0300][0.008s][info][gc] Using G1
+[2023-02-08T13:45:24.107+0300][0.008s][debug][gc] ConcGCThreads: 2 offset 16
+[2023-02-08T13:45:24.107+0300][0.008s][debug][gc] ParallelGCThreads: 8
+[2023-02-08T13:45:24.107+0300][0.008s][debug][gc] Initialize mark stack with 4096 chunks, maximum 524288
+[2023-02-08T13:45:24.535+0300][0.435s][info ][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 444M->117M(8192M) 87.396ms
+[2023-02-08T13:45:24.785+0300][0.685s][info ][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 513M->230M(8192M) 124.062ms
+[2023-02-08T13:45:25.081+0300][0.981s][info ][gc] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 622M->335M(8192M) 69.603ms
+[2023-02-08T13:45:25.328+0300][1.228s][info ][gc] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 691M->408M(8192M) 61.709ms
+[2023-02-08T13:45:25.583+0300][1.483s][info ][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 764M->484M(8192M) 61.872ms
+[2023-02-08T13:45:25.789+0300][1.689s][info ][gc] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 840M->470M(8192M) 20.279ms
+[2023-02-08T13:45:26.032+0300][1.932s][info ][gc] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 838M->540M(8192M) 56.814ms
+[2023-02-08T13:45:26.281+0300][2.181s][info ][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 896M->617M(8192M) 61.679ms
+[2023-02-08T13:45:26.492+0300][2.392s][info ][gc] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 973M->618M(8192M) 26.824ms
+[2023-02-08T13:45:26.738+0300][2.638s][info ][gc] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 974M->686M(8192M) 60.209ms
+[2023-02-08T13:45:26.982+0300][2.882s][info ][gc] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 1042M->764M(8192M) 63.333ms
+[2023-02-08T13:45:27.227+0300][3.127s][info ][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 1148M->781M(8192M) 39.228ms
+[2023-02-08T13:45:27.657+0300][3.557s][info ][gc] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 1373M->902M(8192M) 93.286ms
+[2023-02-08T13:45:27.968+0300][3.868s][info ][gc] GC(13) Pause Young (Normal) (G1 Evacuation Pause) 1406M->911M(8192M) 46.149ms
+[2023-02-08T13:45:28.335+0300][4.236s][info ][gc] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 1595M->863M(8192M) 13.724ms
+[2023-02-08T13:45:33.369+0300][9.270s][info ][gc] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 5747M->1027M(8192M) 177.720ms
+[2023-02-08T13:45:33.976+0300][9.877s][info ][gc] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 1771M->973M(8192M) 88.131ms
+[2023-02-08T13:45:34.649+0300][10.550s][info ][gc] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 1825M->971M(8192M) 68.772ms
