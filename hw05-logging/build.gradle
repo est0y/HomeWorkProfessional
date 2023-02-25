@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow'
+}
+
+group 'ru.est0y'
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation 'org.ow2.asm:asm-commons'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+task shadowHw05(type: Jar, dependsOn: shadowJar) {
+    archiveBaseName.set('hw05')
+    manifest {
+        attributes 'Main-Class': 'ru.logging_app.App'
+        attributes 'Premain-Class': 'ru.logging_app.Agent'
+    }
+    from zipTree(shadowJar.archiveFile)
+}
