@@ -1,5 +1,16 @@
 package ru.otus;
 
+import ru.otus.handler.ComplexProcessor;
+import ru.otus.listener.ListenerPrinterConsole;
+import ru.otus.listener.homework.HistoryListener;
+import ru.otus.model.Message;
+import ru.otus.processor.Processor;
+import ru.otus.processor.homework.ProcessorExceptionInEvenSecond;
+import ru.otus.processor.homework.ProcessorSwapField11WithField12;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class HomeWork {
 
     /*
@@ -20,5 +31,21 @@ public class HomeWork {
            по аналогии с Demo.class
            из элеменов "to do" создать new ComplexProcessor и обработать сообщение
          */
+        List<Processor> processors = List.of(new ProcessorSwapField11WithField12(),
+                new ProcessorExceptionInEvenSecond(LocalDateTime::now));
+
+        ComplexProcessor complexProcessor = new ComplexProcessor(processors,
+                exception -> System.out.println(exception.getMessage()));
+        complexProcessor.addListener(new ListenerPrinterConsole());
+        var history = new HistoryListener();
+        complexProcessor.addListener(history);
+        var message = new Message.Builder(1L)
+                .field11("11")
+                .field12("12")
+                .build();
+
+        Message result = complexProcessor.handle(message);
+        System.out.println("Message in history " + history.findMessageById(1L));
+        System.out.println(result);
     }
 }

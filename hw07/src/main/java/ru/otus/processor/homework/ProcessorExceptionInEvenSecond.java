@@ -11,7 +11,7 @@ public class ProcessorExceptionInEvenSecond implements Processor {
     private final DateTimeProvider dateTimeProvider;
 
 
-    ProcessorExceptionInEvenSecond(DateTimeProvider dateTimeProvider) {
+    public ProcessorExceptionInEvenSecond(DateTimeProvider dateTimeProvider) {
         this.dateTimeProvider = dateTimeProvider;
     }
 
@@ -25,6 +25,6 @@ public class ProcessorExceptionInEvenSecond implements Processor {
                 throw new RuntimeException(e);
             }
         }
-        throw new RuntimeException(String.valueOf(dateTimeProvider.getDate().getSecond()));
+        throw new RuntimeException(String.format("Выбрашено исключение на %d секунде",dateTimeProvider.getDate().getSecond()));
     }
 }

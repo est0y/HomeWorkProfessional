@@ -19,4 +19,13 @@ public class ObjectForMessage implements Cloneable {
         objectForMessage.setData(List.copyOf(this.getData()));
         return objectForMessage;
     }
+
+    @Override
+    public String toString() {
+        if (data != null) {
+            return data.toString();
+        } else {
+            return null;
+        }
+    }
 }

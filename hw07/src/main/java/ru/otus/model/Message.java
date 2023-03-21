@@ -128,13 +128,14 @@ public class Message implements Cloneable {
                 ", field10='" + field10 + '\'' +
                 ", field11='" + field11 + '\'' +
                 ", field12='" + field12 + '\'' +
-                ", field13='" + field13.getData() + '\'' +
+                ", field13='" + field13 + '\'' +
                 '}';
     }
 
     @Override
     public Message clone() {
-        return this.toBuilder().field13(field13.clone()).build();
+        var field13 = this.field13 == null ? null : this.field13.clone();
+        return this.toBuilder().field13(field13).build();
     }
 
     public static class Builder {
