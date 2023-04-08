@@ -12,4 +12,5 @@ include 'hw09:demo'
 findProject(':hw09:demo')?.name = 'demo'
 include 'hw09:homework'
 findProject(':hw09:homework')?.name = 'homework'
+include 'hw10-Hibernate'
 
