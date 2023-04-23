@@ -16,15 +16,19 @@ import java.util.Map;
 
 public class ClientsServlet extends HttpServlet {
     private static final String CLIENTS_PAGE_TEMPLATE = "clients.html";
-    private TemplateProcessor templateProcessor;
-    private DBServiceClient dbServiceClient;
+    private static final String CLIENT_NAME_PARAM_KEY = "name";
+    private static final String CLIENT_ADDRESS_PARAM_KEY = "address";
+    private static final String CLIENT_PHONES_PARAM_KEY = "phones[]";
+    private final TemplateProcessor templateProcessor;
+    private final DBServiceClient dbServiceClient;
 
     public ClientsServlet(TemplateProcessor templateProcessor, DBServiceClient dbServiceClient) {
         this.templateProcessor = templateProcessor;
         this.dbServiceClient = dbServiceClient;
     }
 
-    private void clientsPageResponse(HttpServletResponse response) throws IOException {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse response) throws IOException {
         Map<String, Object> paramsMap = new HashMap<>();
         paramsMap.put("clients", dbServiceClient.findAll());
         response.setContentType("text/html");
@@ -32,20 +36,15 @@ public class ClientsServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse response) throws IOException {
-        clientsPageResponse(response);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse response) throws IOException {
-        var phonesStrings = Arrays.stream(req.getParameterMap().get("phones[]"))
+        var phonesStrings = Arrays.stream(req.getParameterMap().get(CLIENT_PHONES_PARAM_KEY))
                 .filter(phoneString -> !phoneString.isEmpty()).toList();
-        var client = new Client(req.getParameter("name"));
-        client.setAddress(new Address(null, req.getParameter("address")));
+        var client = new Client(req.getParameter(CLIENT_NAME_PARAM_KEY));
+        client.setAddress(new Address(null, req.getParameter(CLIENT_ADDRESS_PARAM_KEY)));
         var phones = phonesStrings.stream().map(phone -> new Phone(null, phone)).toList();
         client.setPhones(phones);
         dbServiceClient.saveClient(client);
-        clientsPageResponse(response);
+        response.sendRedirect("/clients");
     }
 }
 

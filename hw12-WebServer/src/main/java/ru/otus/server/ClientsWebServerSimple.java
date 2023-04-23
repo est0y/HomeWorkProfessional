@@ -13,18 +13,16 @@ import ru.otus.services.TemplateProcessor;
 import ru.otus.servlet.ClientsServlet;
 
 
-public class UsersWebServerSimple implements UsersWebServer {
+public class ClientsWebServerSimple implements ClientsWebServer {
     private static final String START_PAGE_NAME = "index.html";
     private static final String COMMON_RESOURCES_DIR = "static";
 
     private final DBServiceClient dbServiceClient;
-    private final Gson gson;
     protected final TemplateProcessor templateProcessor;
     private final Server server;
 
-    public UsersWebServerSimple(int port, DBServiceClient dbServiceClient, Gson gson, TemplateProcessor templateProcessor) {
+    public ClientsWebServerSimple(int port, DBServiceClient dbServiceClient, TemplateProcessor templateProcessor) {
         this.dbServiceClient = dbServiceClient;
-        this.gson = gson;
         this.templateProcessor = templateProcessor;
         server = new Server(port);
     }

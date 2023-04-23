@@ -1,7 +1,7 @@
 package ru.otus.services;
 
 
-public class UserAuthServiceImpl implements UserAuthService {
+public class AdminAuthService implements UserAuthService {
 
 
     @Override
