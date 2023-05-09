@@ -12,10 +12,9 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Set;
 
-@AllArgsConstructor
 @Getter
 @Table("client")
-public class Client implements Persistable<Long> {
+public class Client  {
     @Id
     private final Long id;
     @Nonnull
@@ -29,16 +28,17 @@ public class Client implements Persistable<Long> {
     @MappedCollection(idColumn = "client_id")
     private final Set<Phone> phones;
 
-    @Transient
-    private final boolean isNew;
 
     private Client() {
-        this(null, null, null, null, true);
+        this(null, null, null, null);
     }
 
     @PersistenceCreator
     public Client(Long id, String name, Address address, Set<Phone> phones) {
-        this(id, name, address, phones, false);
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.phones=phones;
     }
 
 
@@ -48,10 +48,5 @@ public class Client implements Persistable<Long> {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean isNew() {
-        return isNew;
     }
 }
